@@ -325,11 +325,11 @@ select:focus-visible {
 
     .document-page {
         width: 210mm;
-        height: 297mm;
+        height: auto;
         min-height: 297mm;
         margin: 0;
         padding: 22mm 20mm 20mm;
-        overflow: hidden;
+        overflow: visible;
         box-shadow: none;
         break-after: page;
         page-break-after: always;
