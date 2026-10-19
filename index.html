@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企画書作成自動化ツール</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-header no-print">
+        <h1>企画書作成自動化ツール</h1>
+        <p>左側のフォームに各項目を入力すると、右側に企画書と送付状が自動で生成されます。完成後は「印刷(PDF化)」ボタンから出力してください。</p>
+        <button type="button" onclick="window.print()" class="print-btn">印刷 (PDF出力)</button>
+    </div>
+
+    <div class="container">
+        <div class="form-section no-print">
+            <form id="proposal-form">
+                <h2>【準備・構成】</h2>
+                <div class="form-group">
+                    <label for="p-purpose">1. 企画の目的 (種類)</label>
+                    <select id="p-purpose" class="input-trigger">
+                        <option value="提案">提案</option>
+                        <option value="紹介">紹介</option>
+                        <option value="案内">案内</option>
+                        <option value="募集">募集</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="p-target">2. 提出先・想定読者</label>
+                    <input type="text" id="p-target" placeholder="例：株式会社〇〇 営業部ご担当者様" class="input-trigger">
+                </div>
+                <div class="form-group">
+                    <label for="p-title">3. 企画書タイトル</label>
+                    <input type="text" id="p-title" placeholder="例：新規動画コンテンツマーケティングのご提案" class="input-trigger">
+                </div>
+
+                <h2>【分析】</h2>
+                <div class="form-group">
+                    <label for="p-market">4. 市場分析 (ターゲット・市場規模)</label>
+                    <textarea id="p-market" rows="3" placeholder="送付先のターゲット層や市場規模など" class="input-trigger"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="p-competitor">5. 競合分析</label>
+                    <textarea id="p-competitor" rows="3" placeholder="同業他社の差別化ポイントなど" class="input-trigger"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="p-strength">6. 自社の強み (SWOT等)</label>
+                    <textarea id="p-strength" rows="3" placeholder="自社の強みと、それが送付先の課題解決にどう繋がるか" class="input-trigger"></textarea>
+                </div>
+
+                <h2>【企画内容 (5W1H)】</h2>
+                <div class="form-group">
+                    <label for="p-why">7/9. 背景・理由 (WHY)</label>
+                    <textarea id="p-why" rows="3" placeholder="なぜこの企画を行うのか" class="input-trigger"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="p-what">7/9. 企画内容 (WHAT / WHEN / WHERE)</label>
+                    <textarea id="p-what" rows="4" placeholder="何を、いつ、どこで行うか" class="input-trigger"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="p-how">7/9. 実施内容・体制 (HOW / WHO)</label>
+                    <textarea id="p-how" rows="3" placeholder="どのように、誰が実行するか" class="input-trigger"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="p-effect">9. 期待される効果</label>
+                    <textarea id="p-effect" rows="3" placeholder="企画によって得られるメリット・効果" class="input-trigger"></textarea>
+                </div>
+
+                <h2>【送付状情報】</h2>
+                <div class="form-group">
+                    <label for="p-sender">10. 送付元 (自社名・担当者)</label>
+                    <input type="text" id="p-sender" placeholder="例：自社名 氏名" class="input-trigger">
+                </div>
+            </form>
+        </div>
+
+        <div class="preview-section">
+            <div id="preview-area" aria-live="polite">
+                <p class="preview-placeholder">フォームに入力すると、ここに企画書と送付状が表示されます。</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
