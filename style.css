@@ -1,0 +1,351 @@
+:root {
+    color-scheme: light;
+    --ink: #202938;
+    --muted: #667085;
+    --line: #d9dee7;
+    --accent: #3157a4;
+    --surface: #ffffff;
+    --canvas: #eef1f6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP",
+        "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    color: var(--ink);
+    background: var(--canvas);
+}
+
+body {
+    margin: 0;
+}
+
+.app-header {
+    padding: 24px clamp(18px, 4vw, 48px);
+    color: #fff;
+    background: #202e49;
+}
+
+.app-header h1 {
+    margin: 0 0 8px;
+    font-size: clamp(1.35rem, 3vw, 1.9rem);
+}
+
+.app-header p {
+    max-width: 900px;
+    margin: 0 0 16px;
+    color: #e0e7f3;
+    line-height: 1.7;
+}
+
+.print-btn {
+    border: 0;
+    border-radius: 8px;
+    padding: 11px 18px;
+    color: #1e2c46;
+    background: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.print-btn:hover {
+    background: #eaf0ff;
+}
+
+.print-btn:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid #8bb5ff;
+    outline-offset: 2px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: minmax(280px, 390px) minmax(0, 1fr);
+    align-items: start;
+    gap: 24px;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.form-section {
+    position: sticky;
+    top: 16px;
+    max-height: calc(100vh - 32px);
+    overflow-y: auto;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+    box-shadow: 0 4px 18px rgb(26 39 68 / 6%);
+}
+
+.form-section h2 {
+    margin: 24px 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e5eaf3;
+    color: #273b63;
+    font-size: 1rem;
+}
+
+.form-section h2:first-child {
+    margin-top: 0;
+}
+
+.form-group {
+    display: grid;
+    gap: 7px;
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    min-width: 0;
+    border: 1px solid #cbd3df;
+    border-radius: 7px;
+    padding: 10px 11px;
+    color: var(--ink);
+    background: #fff;
+    font: inherit;
+    font-size: 0.93rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.preview-section {
+    min-width: 0;
+}
+
+#preview-area {
+    display: grid;
+    justify-items: center;
+    gap: 24px;
+}
+
+.preview-placeholder {
+    width: 100%;
+    padding: 48px 20px;
+    border: 1px dashed #b9c3d3;
+    border-radius: 10px;
+    color: var(--muted);
+    background: #fff;
+    text-align: center;
+}
+
+.document-page {
+    position: relative;
+    width: 210mm;
+    min-height: 297mm;
+    padding: 22mm 20mm 20mm;
+    overflow-wrap: anywhere;
+    background: #fff;
+    box-shadow: 0 5px 24px rgb(26 39 68 / 12%);
+}
+
+.doc-title {
+    margin: 0 0 14mm;
+    color: #182b4d;
+    font-size: 23pt;
+    line-height: 1.45;
+    text-align: center;
+}
+
+.doc-meta {
+    margin: 0 0 10mm;
+    padding-bottom: 5mm;
+    border-bottom: 1px solid var(--line);
+    color: #4b5565;
+    font-size: 9.5pt;
+    line-height: 1.8;
+}
+
+.doc-section {
+    margin: 0 0 7mm;
+    break-inside: avoid;
+}
+
+.doc-section h2 {
+    margin: 0 0 3mm;
+    padding: 2.5mm 3mm;
+    border-left: 4px solid var(--accent);
+    color: #213b69;
+    background: #f1f5fc;
+    font-size: 12pt;
+    line-height: 1.5;
+}
+
+.doc-section p {
+    margin: 0;
+    font-size: 10.5pt;
+    line-height: 1.85;
+    white-space: pre-wrap;
+}
+
+.doc-kicker {
+    margin: 0 0 6mm;
+    color: var(--accent);
+    font-size: 9pt;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-align: center;
+}
+
+.cover-date {
+    margin: 0 0 18mm;
+    text-align: right;
+    font-size: 10pt;
+}
+
+.cover-recipient {
+    margin: 0 0 18mm;
+    font-size: 13pt;
+    font-weight: 700;
+}
+
+.cover-heading {
+    margin: 0 0 10mm;
+    font-size: 17pt;
+    text-align: center;
+}
+
+.cover-body {
+    font-size: 11pt;
+    line-height: 2;
+    white-space: pre-wrap;
+}
+
+.cover-sender {
+    margin-top: 18mm;
+    font-size: 11pt;
+    line-height: 1.9;
+    text-align: right;
+    white-space: pre-wrap;
+}
+
+.cover-note {
+    margin-top: 12mm;
+    padding-top: 5mm;
+    border-top: 1px solid var(--line);
+    font-size: 10pt;
+    line-height: 1.8;
+}
+
+@media (max-width: 1050px) {
+    .container {
+        grid-template-columns: minmax(250px, 340px) minmax(0, 1fr);
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .document-page {
+        width: 100%;
+        min-height: auto;
+        aspect-ratio: 210 / 297;
+        padding: 10%;
+    }
+}
+
+@media (max-width: 760px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .form-section {
+        position: static;
+        max-height: none;
+    }
+
+    .document-page {
+        aspect-ratio: auto;
+        min-height: 0;
+        padding: 24px;
+    }
+
+    .doc-title {
+        margin-bottom: 36px;
+        font-size: 1.5rem;
+    }
+
+    .doc-section {
+        margin-bottom: 24px;
+    }
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+    html,
+    body {
+        width: 210mm;
+        margin: 0;
+        background: #fff;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .container {
+        display: block;
+        width: 210mm;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .preview-section,
+    #preview-area {
+        display: block;
+        width: 210mm;
+        margin: 0;
+        padding: 0;
+    }
+
+    .document-page {
+        width: 210mm;
+        height: 297mm;
+        min-height: 297mm;
+        margin: 0;
+        padding: 22mm 20mm 20mm;
+        overflow: hidden;
+        box-shadow: none;
+        break-after: page;
+        page-break-after: always;
+    }
+
+    .document-page:last-child {
+        break-after: auto;
+        page-break-after: auto;
+    }
+
+    .doc-section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .preview-placeholder {
+        display: none;
+    }
+}
