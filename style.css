@@ -349,3 +349,118 @@ select:focus-visible {
         display: none;
     }
 }
+
+/* 送付後アクション・管理シート */
+.management-page .doc-title {
+    margin-bottom: 5mm;
+    font-size: 21pt;
+}
+
+.management-notice {
+    margin: 0 0 8mm;
+    color: var(--muted);
+    font-size: 9pt;
+    text-align: center;
+}
+
+.management-summary,
+.management-checklist,
+.management-progress {
+    margin-bottom: 8mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+.management-summary h2,
+.management-checklist h2,
+.management-progress h2 {
+    margin: 0 0 4mm;
+    padding: 2.5mm 3mm;
+    border-left: 4px solid var(--accent);
+    color: #213b69;
+    background: #f1f5fc;
+    font-size: 12pt;
+}
+
+.management-details {
+    display: grid;
+    grid-template-columns: 28mm minmax(0, 1fr);
+    gap: 2mm 4mm;
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.6;
+}
+
+.management-details dt {
+    font-weight: 700;
+}
+
+.management-details dd {
+    min-width: 0;
+    margin: 0;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.checklist-item {
+    display: flex;
+    gap: 3mm;
+    margin: 0 0 3mm;
+    font-size: 10pt;
+    line-height: 1.6;
+}
+
+.check-box {
+    flex: 0 0 auto;
+    font-size: 13pt;
+    line-height: 1.2;
+}
+
+.management-field {
+    margin: 0 0 5mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+.management-field h3 {
+    margin: 0 0 2mm;
+    font-size: 10pt;
+}
+
+.handwriting-area {
+    min-height: 24mm;
+    border: 1px solid #aeb7c5;
+    background: #fff;
+}
+
+.handwriting-area.feedback-area {
+    min-height: 31mm;
+}
+
+.handwriting-area.next-action-area {
+    min-height: 31mm;
+}
+
+.handwriting-area.owner-area {
+    min-height: 18mm;
+}
+
+@media (max-width: 760px) {
+    .management-details {
+        grid-template-columns: 90px minmax(0, 1fr);
+    }
+}
+
+@media print {
+    .management-page .doc-title {
+        margin-bottom: 5mm;
+    }
+
+    .management-summary,
+    .management-checklist,
+    .management-progress,
+    .management-field {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
